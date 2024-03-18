@@ -1,0 +1,217 @@
+{% extends 'home_base.html' %}
+{% block title %} Admin Panel - Dues Entry (Auto) {% endblock %}
+{% load static %}
+{% block body %}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="{% static '' %}css/due_adm_entry.css" rel="stylesheet" />
+<div class="container">
+        <div class=" text-center mt-5 ">
+
+            <br>
+            <br>
+            <br>
+
+
+            <h2>Dues Entry (Auto)</h2>
+
+            <hr>
+
+            {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+
+        </div>
+
+
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+
+            <div class = "container">
+                             <form id="contact-form" role="form" action="" method="post" enctype="multipart/form-data">
+                                 {% csrf_token %}
+
+
+
+            <div class="controls">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_name">Student ID</label>
+                            <input id="form_name" type="text" name="dues_auto_student_id" class="form-control" placeholder="Enter student ID " required="required" data-error="Student ID is required.">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_need">Starting Year</label>
+                            <select id="form_need" name="dues_auto_year" class="form-control" required="required" data-error="Please specify year">
+                                <option value="" selected disabled>--Select Year--</option>
+                                <option >2024</option>
+                                <option >2023</option>
+                                <option >2022</option>
+                                <option >2021</option>
+                                <option >2020</option>
+                                <option >2019</option>
+                                <option >2018</option>
+                                <option >2017</option>
+                                <option >2016</option>
+                                <option >2015</option>
+                                <option >2014</option>
+                                <option >2013</option>
+                                <option >2012</option>
+                                <option >2011</option>
+                                <option >2010</option>
+                                <option >2009</option>
+                                <option >2008</option>
+                                <option >2007</option>
+                                <option >2006</option>
+                                <option >2005</option>
+                                <option >2004</option>
+                                <option >2003</option>
+                                <option >2002</option>
+                                <option >2001</option>
+                                <option >2000</option>
+                                <option >1999</option>
+                                <option >1998</option>
+                                <option >1997</option>
+                                <option >1996</option>
+                                <option >1995</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_need">Starting Season</label>
+                            <select id="form_need" name="dues_auto_season" class="form-control" required="required" data-error="Please specify season">
+                                <option value="" selected disabled>--Select Season--</option>
+                                <option >Winter</option>
+                                <option >Summer</option>
+                                <option >Spring</option>
+                                <option >Autumn</option>
+                                <option >Fall</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_need">Select Program</label>
+                            <select id="form_need" name="dues_auto_program" class="form-control" required="required" data-error="Please select program">
+                                <option value="" selected disabled>--Click Here to Select--</option>
+                                <option >BSc in Computer Science and Engineering</option>
+                                <option >MSc in Computer Science and Engineering</option>
+                                <option >BSc in Electronics and Telecommunication Engineering</option>
+                                <option >BSc in Textile Engineering</option>
+                                <option >BSc in Textile Engineering (for Diploma Holders)</option>
+                                <option >BBA</option>
+                                <option >MBA</option>
+                                <option >MBA (Regular)</option>
+                                <option >MBA (Executive)</option>
+                                <option >MBA (for BBA Holders)</option>
+                                <option >Bachelor of Arts in English</option>
+                                <option >Master of Arts (Preliminary) in English</option>
+                                <option >Master of Arts in English</option>
+                                <option >Master of Arts in English Language Teaching (ELT)</option>
+                                <option >LLB</option>
+                                <option >LLM</option>
+                                <option >BSc in Physiotherapy</option>
+                                <option >BSS (Hons) in Sociology and Social Work</option>
+                                <option >MSS in Sociology and Social Work</option>
+                                <option >MSS in Political Science</option>
+                                <option >Tourism & Hospitality Management (THM)</option>
+                                <option >BA (Hons) in Islamic Studies</option>
+                                <option >MA(Preli) in Islamic Studies</option>
+                                <option >MA(Final) in Islamic Studies</option>
+                                <option >BA (Hons) in Islamic History & Culture</option>
+                                <option >MA (Final) In Islamic History & Culture </option>
+                                <option >BSS (Hons) In Political Science</option>
+                                <option >MSS (Final) in Political Science</option>
+                                <option >BSS (Hons) in Economics</option>
+                                <option >MSS in Economics</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_name">Discount (%)</label>
+                            <input id="form_name" type="text" name="dues_auto_discount" class="form-control" placeholder="Enter amount">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_lastname">Dues Entry Date</label>
+                            <input id="form_lastname" type="date" name="dues_auto_date" class="form-control"  required="required" data-error="Date is required.">
+                                                            </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-md-8">
+
+                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                            " value="Save" >
+
+                </div>
+
+                    <div class="col-md-4">
+
+                      <a href="/" class="btn btn-success btn-send  pt-2 btn-block">Home</a>
+
+                </div>
+
+                </div>
+
+
+        </div>
+         </form>
+
+        </div>
+            </div>
+
+
+    </div>
+        <!-- /.8 -->
+
+    </div>
+    <!-- /.row-->
+
+</div>
+</div>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+{% endblock %}
+

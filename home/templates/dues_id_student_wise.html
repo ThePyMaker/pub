@@ -1,0 +1,96 @@
+{% extends 'home_base.html' %}
+{% block title %} Admin Panel - View Dues (Student Wise){% endblock %}
+{% load static %}
+{% block body %}
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="{% static '' %}css/due_adm_entry.css" rel="stylesheet" />
+<div class="container">
+        <div class=" text-center mt-5 ">
+
+            <br>
+            <br>
+            <br>
+
+
+            <h2>View Dues (Student Wise)</h2>
+
+            <hr>
+
+            {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{message.tags}}" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+
+        </div>
+
+
+    <div class="row ">
+      <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+
+            <div class = "container">
+                             <form id="contact-form" role="form" action="" method="post" enctype="multipart/form-data">
+                                 {% csrf_token %}
+
+
+
+            <div class="controls">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="form_name">Enter Student ID</label>
+                            <input id="form_name" type="text" name="student_id" class="form-control" placeholder="Student ID " required="required" data-error="Student ID is required.">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+
+
+                    <div class="col-md-12">
+
+                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
+                            " value="Submit" >
+
+                </div>
+
+                </div>
+            </div>
+         </form>
+
+        </div>
+            </div>
+
+
+    </div>
+        <!-- /.8 -->
+          <br>
+            <br>
+            <br>
+
+    </div>
+    <!-- /.row-->
+
+</div>
+</div>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+{% endblock %}
+

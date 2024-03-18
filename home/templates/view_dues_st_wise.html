@@ -1,0 +1,84 @@
+{% extends 'home_base.html' %}
+{% block title %} Admin Panel - View Dues (Student Wise){% endblock %}
+{% load static %}
+{% block body %}
+
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="{% static '' %}css/due_adm_entry.css" rel="stylesheet" />
+<div class="container">
+        <div class=" text-center mt-5 ">
+
+            <br>
+            <br>
+            <br>
+
+
+            <h2>The People's University of Bangladesh</h2>
+
+            <hr>
+
+            <h4>Dues Report (Student Wise)</h4>
+
+            <h5><strong>Program Name:</strong> BSc in Computer Science and Engineering</h5>
+            <h5><strong>Student Name:</strong> Manik Mia</h5> <h5><strong>Batch:</strong> 51st</h5>
+
+            <h5><strong>Student ID:</strong> 2135125019</h5>
+
+
+        </div>
+
+    <table style="width:100%">
+  <tr>
+      <th>Year</th>
+      <th>Season</th>
+      <th>Semester</th>
+      <th>Due</th>
+      <th>Payment</th>
+      <th>Waiver</th>
+      <th>Balance</th>
+      <th>Total Due</th>
+  </tr>
+  <tr>
+      <td>2023</td>
+      <td>Summer</td>
+      <td>1st</td>
+      <td>42000</td>
+      <td>22000</td>
+      <td>2000</td>
+      <td>42000</td>
+      <td>42000</td>
+  </tr>
+  <tr>
+    <td>2024</td>
+      <td>Spring</td>
+      <td>2nd</td>
+      <td>42000</td>
+      <td>22000</td>
+      <td>2000</td>
+      <td>42000</td>
+      <td>42000</td>
+  </tr>
+</table>
+
+    <br>
+    <br>
+
+
+</div>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+{% endblock %}
