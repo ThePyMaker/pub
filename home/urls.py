@@ -9,6 +9,7 @@ urlpatterns = [
     path('due_auto/', views.due_auto, name='due_auto'),
     path('payment_auto/', views.payment_auto, name='payment_auto'),
     path('dues_id_student_wise/', views.dues_id_student_wise, name='dues_id_student_wise'),
+    path('dues_id_student_wise/open_dues_id_student_wise/', views.open_dues_id_student_wise, name='open_dues_id_student_wise'),
     path('view_dues_st_wise/', views.view_dues_st_wise, name='view_dues_st_wise'),
 
 ]

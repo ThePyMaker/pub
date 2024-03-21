@@ -93,3 +93,13 @@ class PaymentEntryAutoForm(ModelForm):
     class Meta:
         model = PaymentEntryAuto
         fields = ['p_auto_student_id', 'p_auto_amount', 'p_auto_money_receipt', 'p_auto_campus', 'p_auto_mode_payment', 'p_auto_date']
+
+
+class ViewDue(models.Model):
+    student_id = models.CharField(blank=False, max_length=14)
+
+
+class ViewDueForm(ModelForm):
+    class Meta:
+        model = ViewDue
+        fields = ['student_id']

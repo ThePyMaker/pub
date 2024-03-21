@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
 from home.models import DuesAdmissionEntryForm, DuesAdmissionEntry, PaymentAdmissionEntryForm, PaymentAdmissionEntry, \
-    DuesEntryAutoForm, DuesEntryAuto, PaymentEntryAuto, PaymentEntryAutoForm
+    DuesEntryAutoForm, DuesEntryAuto, PaymentEntryAuto, PaymentEntryAutoForm, ViewDueForm, ViewDue
 
 
 # Create your views here.
@@ -34,6 +34,24 @@ def due_adm_entry(request):
     }
 
     return render(request, 'due_adm_entry.html', context)
+
+
+def open_dues_id_student_wise(request):
+    if request.method == 'POST':
+        form = ViewDueForm(request.POST)
+        data = {
+            'dues': [],
+            'student_id': ''
+        }
+        if form.is_valid():
+            student_id = form.cleaned_data['student_id']
+            results = DuesAdmissionEntry.objects.filter(student_id=student_id).all()
+            data.update({
+                'dues': results,
+                'student_id': student_id
+            })
+        return render(request, 'view_dues_st_wise.html', data)
+
 
 
 def payment_adm_entry(request):
